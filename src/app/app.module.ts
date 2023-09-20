@@ -13,9 +13,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, LoginComponent, SignUpComponent],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    LoginComponent,
+    SignUpComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -27,6 +35,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     MatFormFieldModule,
     MatIconModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
