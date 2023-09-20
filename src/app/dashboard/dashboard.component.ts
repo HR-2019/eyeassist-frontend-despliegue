@@ -8,6 +8,7 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements AfterViewInit {
+  showFiller = false;
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   @ViewChild(MatPaginator) paginator!: MatPaginator;

@@ -1,138 +1,216 @@
 <style>
   .main-dash {
     height: 100vh;
-    background: red;
+    color: #006400;
+    background: #F5F5DC;
   }
 
   table {
     width: 100%;
   }
+
   .proccess-table {
     padding: 10px;
   }
+
   .data-header {
     padding: 10px;
   }
+
   mat-card {
     width: 100%;
     height: 100%;
+    background: #E7E7CD;
   }
+
   icon-container {
-    width: 100%;
-  }
-  mat-icon {
-    font-size: 100px;
     width: 100%;
     height: 100%;
   }
+
+  .icon-container mat-icon {
+    color: #006400;
+    font-size: 150px;
+    width: 100%;
+    height: 100%;
+  }
+
   .icon-container {
-    background: blue;
+    background: #F5F5DC;
     padding: 20px;
     border-radius: 5%;
   }
+
   .text-container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+  }
+
+  .text-container span {
+    width: 100%;
+    height: 30%;
+    font-size: 20px;
   }
 
   .number-container {
+    width: 100%;
     height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
   }
+
+  .number-container span {
+    width: 100%;
+    height: 30%;
+    font-size: 50px;
+  }
+
   .data-container {
+    width: 100%;
     height: 100%;
   }
 
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .example-sidenav {
+    padding: 20px;
+  }
+  .toolbar-custom {
+    background: #E7E7CD;
+    color: #006400;
+  }
 </style>
 
-<div class="main-dash">
-  <div class="data-header">
-    <mat-grid-list cols="2" rowHeight="2:1" gutterSize=20>
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-content>
-            <mat-grid-list cols="2">
-              <mat-grid-tile>
-                <div class="icon-container">
-                  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="movie"></mat-icon>
-                </div>
-              </mat-grid-tile>
-              <mat-grid-tile>
-                <div class="text-container">
-                  <div class="number-container">
-                    <span>2</span>
+<div class="">
+  <mat-drawer-container class="main-dash">
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <p>Auto-resizing sidenav</p>
+    </mat-drawer>
+    <mat-toolbar class="toolbar-custom">
+      <button mat-icon-button class="example-icon" (click)="drawer.toggle()"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Eyeeassist</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="beforeMenu" class="example-icon"
+        aria-label="Example icon-button with share icon">
+        <mat-icon>person</mat-icon>
+      </button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <div>
+          <button routerLink="/" mat-menu-item>Signup
+            <mat-icon>exit_to_app</mat-icon>
+          </button>
+        </div>
+      </mat-menu>
+    </mat-toolbar>
+
+    <div class="data-header">
+      <mat-grid-list cols="2" rowHeight="2:1" gutterSize=20>
+        <mat-grid-tile>
+          <mat-card>
+            <mat-card-content>
+              <mat-grid-list cols="2">
+                <mat-grid-tile>
+                  <div class="icon-container">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="movie"></mat-icon>
                   </div>
-                  <div class="data-container">
-                    <span>Videos</span>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <div class="text-container">
+                    <div class="number-container">
+                      <span>2</span>
+                    </div>
+                    <div class="data-container">
+                      <span>Videos</span>
+                    </div>
                   </div>
-                </div>
-              </mat-grid-tile>
-            </mat-grid-list>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-      <mat-grid-tile>
-        <mat-card>
-          <mat-card-content>
-            <mat-grid-list cols="2">
-              <mat-grid-tile>
-                <div class="icon-container">
-                  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="image"></mat-icon>
-                </div>
-              </mat-grid-tile>
-              <mat-grid-tile>
-                <div class="text-container">
-                  <div class="number-container">
-                    <span>2</span>
+                </mat-grid-tile>
+              </mat-grid-list>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-card>
+            <mat-card-content>
+              <mat-grid-list cols="2">
+                <mat-grid-tile>
+                  <div class="icon-container">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="image"></mat-icon>
                   </div>
-                  <div class="data-container">
-                    <span>imagenes</span>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                  <div class="text-container">
+                    <div class="number-container">
+                      <span>2</span>
+                    </div>
+                    <div class="data-container">
+                      <span>Imagenes</span>
+                    </div>
                   </div>
-                </div>
-              </mat-grid-tile>
-            </mat-grid-list>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </div>
-  <div class="proccess-table">
-    <div class="mat-elevation-z8">
-      <table mat-table [dataSource]="dataSource">
-
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-        </ng-container>
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-
-        <!-- Weight Column -->
-        <ng-container matColumnDef="weight">
-          <th mat-header-cell *matHeaderCellDef> Weight </th>
-          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="symbol">
-          <th mat-header-cell *matHeaderCellDef> Symbol </th>
-          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-
-      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
-      </mat-paginator>
+                </mat-grid-tile>
+              </mat-grid-list>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
     </div>
+    <div class="proccess-table">
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
 
-  </div>
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> Weight </th>
+            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> Symbol </th>
+            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+          aria-label="Select page of periodic elements">
+        </mat-paginator>
+      </div>
+
+    </div>
+  </mat-drawer-container>
 </div>

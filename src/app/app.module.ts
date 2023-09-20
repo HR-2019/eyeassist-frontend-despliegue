@@ -16,6 +16,9 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatTableModule,
     MatPaginatorModule,
     MatGridListModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
