@@ -1,0 +1,102 @@
+<style>
+  .example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
+
+  .example-right-align {
+    text-align: right;
+  }
+
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
+
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f5f5dc;
+  }
+
+  .login-card {
+    padding: 40px;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .login-button {
+    width: 100%;
+  }
+
+  .actions-login-form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .actions-login-form a {
+    text-align: left;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .actions-login-form span {
+    text-align: left;
+    width: 100%;
+  }
+  .main-card {
+    text-align: center;
+  }
+  .redirect-side {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
+
+<div class="main">
+  <div class="content" role="main">
+    <mat-card class="login-card">
+      <mat-card-content class="main-card">
+        <h1>Sign in</h1>
+        <div>
+          <mat-form-field class="input">
+            <mat-label>Email</mat-label>
+            <input matInput required/>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="input">
+            <mat-label>Enter your password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" required/>
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="actions-login-form">
+          <button class="login-button" mat-raised-button color="primary">
+            Login
+          </button>
+          <div class="redirect-side">
+            <a href="www.google.com">Forgot password?</a>
+            <span>Do you hace an account? <a href="/sign-up">Sign up</a></span>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
