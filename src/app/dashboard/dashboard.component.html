@@ -1,0 +1,138 @@
+<style>
+  .main-dash {
+    height: 100vh;
+    background: red;
+  }
+
+  table {
+    width: 100%;
+  }
+  .proccess-table {
+    padding: 10px;
+  }
+  .data-header {
+    padding: 10px;
+  }
+  mat-card {
+    width: 100%;
+    height: 100%;
+  }
+  icon-container {
+    width: 100%;
+  }
+  mat-icon {
+    font-size: 100px;
+    width: 100%;
+    height: 100%;
+  }
+  .icon-container {
+    background: blue;
+    padding: 20px;
+    border-radius: 5%;
+  }
+  .text-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .number-container {
+    height: 100%;
+  }
+  .data-container {
+    height: 100%;
+  }
+
+</style>
+
+<div class="main-dash">
+  <div class="data-header">
+    <mat-grid-list cols="2" rowHeight="2:1" gutterSize=20>
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-content>
+            <mat-grid-list cols="2">
+              <mat-grid-tile>
+                <div class="icon-container">
+                  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="movie"></mat-icon>
+                </div>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <div class="text-container">
+                  <div class="number-container">
+                    <span>2</span>
+                  </div>
+                  <div class="data-container">
+                    <span>Videos</span>
+                  </div>
+                </div>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card>
+          <mat-card-content>
+            <mat-grid-list cols="2">
+              <mat-grid-tile>
+                <div class="icon-container">
+                  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="image"></mat-icon>
+                </div>
+              </mat-grid-tile>
+              <mat-grid-tile>
+                <div class="text-container">
+                  <div class="number-container">
+                    <span>2</span>
+                  </div>
+                  <div class="data-container">
+                    <span>imagenes</span>
+                  </div>
+                </div>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <div class="proccess-table">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef> Weight </th>
+          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef> Symbol </th>
+          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+
+  </div>
+</div>
