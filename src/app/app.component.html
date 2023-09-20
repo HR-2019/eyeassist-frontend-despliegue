@@ -1,44 +1,48 @@
 <style>
-.example-container mat-form-field + mat-form-field {
-  margin-left: 8px;
-}
+  .example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
+  }
 
-.example-right-align {
-  text-align: right;
-}
+  .example-right-align {
+    text-align: right;
+  }
 
-input.example-right-align::-webkit-outer-spin-button,
-input.example-right-align::-webkit-inner-spin-button {
-  display: none;
-}
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
 
-input.example-right-align {
-  -moz-appearance: textfield;
-}
-.main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-  background-color: #F5F5DC;
-}
-.login-card {
-  padding: 40px;
-}
-.input {
-  width: 100%; 
-}
-.login-button {
-  width: 100%;
-}
-.actions-login-form {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
+  input.example-right-align {
+    -moz-appearance: textfield;
+  }
 
+  .main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #f5f5dc;
+  }
+
+  .login-card {
+    padding: 40px;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .login-button {
+    width: 100%;
+  }
+
+  .actions-login-form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
 </style>
 
 <div class="main">
@@ -49,20 +53,27 @@ input.example-right-align {
         <div>
           <mat-form-field class="input">
             <mat-label>Email</mat-label>
-            <input matInput>
+            <input matInput />
           </mat-form-field>
         </div>
         <div>
           <mat-form-field class="input">
             <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <input matInput [type]="hide ? 'password' : 'text'" />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
             </button>
           </mat-form-field>
         </div>
         <div class="actions-login-form">
-          <button class="login-button" mat-raised-button color="primary">Login</button>
+          <button class="login-button" mat-raised-button color="primary">
+            Login
+          </button>
           <a href="www.google.com">Forgot password</a>
         </div>
       </mat-card-content>
