@@ -1,0 +1,32 @@
+<style>
+    .main-video-player{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 80%;
+    }
+    .url-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+    .url-container input {
+        width: 100%;
+    }
+    mat-form-field {
+        width: 60%;
+    }
+</style>
+<div class="main-video-player">
+    <div id="player">video</div>
+    <div class="url-container">
+        <mat-form-field appearance="fill">
+            <mat-label>Input</mat-label>
+            <input matInput [(ngModel)]="this.url" (ngModelChange)="handleUrlChange()">
+        </mat-form-field>
+        <button mat-stroked-button color="primary">Select Video</button>
+    </div>
+</div>

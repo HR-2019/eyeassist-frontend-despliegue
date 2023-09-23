@@ -104,29 +104,6 @@
 </style>
 
 <div class="">
-  <mat-drawer-container class="main-dash">
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-      <p>Auto-resizing sidenav</p>
-    </mat-drawer>
-    <mat-toolbar class="toolbar-custom">
-      <button mat-icon-button class="example-icon" (click)="drawer.toggle()"
-        aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>Eyeeassist</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button [matMenuTriggerFor]="beforeMenu" class="example-icon"
-        aria-label="Example icon-button with share icon">
-        <mat-icon>person</mat-icon>
-      </button>
-      <mat-menu #beforeMenu="matMenu" xPosition="before">
-        <div>
-          <button (click)="signOut()" mat-menu-item>Signup
-            <mat-icon>exit_to_app</mat-icon>
-          </button>
-        </div>
-      </mat-menu>
-    </mat-toolbar>
 
     <div class="data-header">
       <mat-grid-list cols="2" rowHeight="2:1" gutterSize=20>
@@ -215,5 +192,4 @@
       </div>
 
     </div>
-  </mat-drawer-container>
 </div>

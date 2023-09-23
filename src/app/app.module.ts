@@ -21,6 +21,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { VideoPlayerComponent } from './video-player/video-player.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { FormsModule } from '@angular/forms';
     DashboardComponent,
     LoginComponent,
     SignUpComponent,
+    VideoPlayerComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

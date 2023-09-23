@@ -39,7 +39,7 @@ export class LoginComponent {
         if (response.status == 200) {
           const body: AuthResponseEntity = response.body as AuthResponseEntity;
           localStorage.setItem('token', body.token);
-          this.router.navigate(['/dash']);
+          this.router.navigate(['/home/dash']);
         }
       });
     }
