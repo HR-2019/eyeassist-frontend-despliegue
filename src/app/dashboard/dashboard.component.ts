@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,6 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements AfterViewInit {
+  constructor(private router: Router) {}
   showFiller = false;
   displayedColumns: string[] = ['position', 'status', 'type', 'actions'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
@@ -15,6 +17,10 @@ export class DashboardComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
+  }
+  signOut() {
+    localStorage.clear()
+    this.router.navigate(['/']);
   }
 }
 

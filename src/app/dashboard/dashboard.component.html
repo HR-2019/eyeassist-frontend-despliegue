@@ -121,7 +121,7 @@
       </button>
       <mat-menu #beforeMenu="matMenu" xPosition="before">
         <div>
-          <button routerLink="/" mat-menu-item>Signup
+          <button (click)="signOut()" mat-menu-item>Signup
             <mat-icon>exit_to_app</mat-icon>
           </button>
         </div>
