@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { HomeComponent } from './home/home.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { HomeComponent } from './home/home.component';
     SignUpComponent,
     VideoPlayerComponent,
     HomeComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,7 @@ import { HomeComponent } from './home/home.component';
     MatSidenavModule,
     MatMenuModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -101,14 +101,32 @@
     background: #E7E7CD;
     color: #006400;
   }
+  .sidenav {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+  }
+
+  .sidenav div{
+    margin-top: 25px;
+  }
+  .sidenav div a{
+    display: flex;
+    align-content: center;
+    justify-items: center;
+  }
 </style>
 
 <div class="">
   <mat-drawer-container class="main-dash">
     <mat-drawer #drawer class="example-sidenav" mode="side">
-        <div>
-            <a routerLink="/home/dash"><mat-icon>board</mat-icon>Dashboard</a>
-            <a routerLink="/home/video"><mat-icon>movie</mat-icon>Upload video</a>
+        <div class="sidenav">
+          <div>
+            <a routerLink="/home/dash"><mat-icon>dashboard</mat-icon> Dashboard</a>
+          </div>
+          <div>
+            <a routerLink="/home/video"><mat-icon>movie</mat-icon> Upload video</a>
+          </div>
         </div>
     </mat-drawer>
     <mat-toolbar class="toolbar-custom">
@@ -126,6 +144,11 @@
         <div>
           <button (click)="signOut()" mat-menu-item>Signup
             <mat-icon>exit_to_app</mat-icon>
+          </button>
+        </div>
+        <div>
+          <button (click)="settings()" mat-menu-item>Settings
+            <mat-icon>settings</mat-icon>
           </button>
         </div>
       </mat-menu>

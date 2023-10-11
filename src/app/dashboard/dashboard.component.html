@@ -119,7 +119,7 @@
                 <mat-grid-tile>
                   <div class="text-container">
                     <div class="number-container">
-                      <span>2</span>
+                      <span>{{videoCount}}</span>
                     </div>
                     <div class="data-container">
                       <span>Videos</span>
@@ -142,7 +142,7 @@
                 <mat-grid-tile>
                   <div class="text-container">
                     <div class="number-container">
-                      <span>2</span>
+                      <span>{{imageCount}}</span>
                     </div>
                     <div class="data-container">
                       <span>Imagenes</span>
@@ -159,27 +159,21 @@
       <div class="mat-elevation-z8">
         <table mat-table [dataSource]="dataSource">
           <!-- Position Column -->
-          <ng-container matColumnDef="position">
-            <th mat-header-cell *matHeaderCellDef class="header-mat"> No. </th>
-            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef class="header-mat"> Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
           </ng-container>
 
           <!-- Name Column -->
-          <ng-container matColumnDef="status">
-            <th mat-header-cell *matHeaderCellDef class="header-mat"> Status </th>
-            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+          <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef class="header-mat"> Codigo </th>
+            <td mat-cell *matCellDef="let element"> {{element.codigo}} </td>
           </ng-container>
 
           <!-- Weight Column -->
-          <ng-container matColumnDef="type" >
-            <th mat-header-cell *matHeaderCellDef class="header-mat"> Type </th>
-            <td mat-cell *matCellDef="let element"> {{element.type}} </td>
-          </ng-container>
-
-          <!-- Symbol Column -->
-          <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef class="header-mat"> Actions </th>
-            <td mat-cell *matCellDef="let element"> {{element.actions}} </td>
+          <ng-container matColumnDef="status" >
+            <th mat-header-cell *matHeaderCellDef class="header-mat"> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { VideoPlayerComponent } from './video-player/video-player.component';
 import { HomeComponent } from './home/home.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
@@ -18,8 +19,12 @@ const routes: Routes = [
       {
         path: 'video',
         component: VideoPlayerComponent,
-      }
-    ]
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent,
+      },
+    ],
   },
   { path: 'home', redirectTo: '/home/dash', pathMatch: 'full' },
   {
