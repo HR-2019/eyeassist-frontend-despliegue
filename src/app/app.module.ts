@@ -19,6 +19,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { VideoPlayerComponent } from './video-player/video-player.component';
+import { HomeComponent } from './home/home.component';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +31,9 @@ import { MatMenuModule } from '@angular/material/menu';
     DashboardComponent,
     LoginComponent,
     SignUpComponent,
+    VideoPlayerComponent,
+    HomeComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +52,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatToolbarModule,
     MatSidenavModule,
     MatMenuModule,
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

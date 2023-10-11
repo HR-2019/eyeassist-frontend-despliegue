@@ -1,0 +1,159 @@
+<style>
+  .main-dash {
+    height: 100vh;
+    color: #006400;
+    background: #F5F5DC;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .proccess-table {
+    padding: 10px;
+  }
+
+  .data-header {
+    padding: 10px;
+  }
+
+  mat-card {
+    width: 100%;
+    height: 100%;
+    background: #E7E7CD;
+  }
+
+  icon-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .icon-container mat-icon {
+    color: #006400;
+    font-size: 150px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .icon-container {
+    background: #F5F5DC;
+    padding: 20px;
+    border-radius: 5%;
+  }
+  .header-mat {
+    background-color: #F5F5DC !important;
+    color: #006400 !important;
+  }
+
+  .text-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-container span {
+    width: 100%;
+    height: 30%;
+    font-size: 20px;
+  }
+
+  .number-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+  }
+
+  .number-container span {
+    width: 100%;
+    height: 30%;
+    font-size: 50px;
+  }
+
+  .data-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .example-sidenav {
+    padding: 20px;
+  }
+  .toolbar-custom {
+    background: #E7E7CD;
+    color: #006400;
+  }
+  .sidenav {
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+  }
+
+  .sidenav div{
+    margin-top: 25px;
+  }
+  .sidenav div a{
+    display: flex;
+    align-content: center;
+    justify-items: center;
+  }
+</style>
+
+<div class="">
+  <mat-drawer-container class="main-dash">
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <div class="sidenav">
+          <div>
+            <a routerLink="/home/dash"><mat-icon>dashboard</mat-icon> Dashboard</a>
+          </div>
+          <div>
+            <a routerLink="/home/video"><mat-icon>movie</mat-icon> Upload video</a>
+          </div>
+        </div>
+    </mat-drawer>
+    <mat-toolbar class="toolbar-custom">
+      <button mat-icon-button class="example-icon" (click)="drawer.toggle()"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Eyeeassist</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button [matMenuTriggerFor]="beforeMenu" class="example-icon"
+        aria-label="Example icon-button with share icon">
+        <mat-icon>person</mat-icon>
+      </button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <div>
+          <button (click)="signOut()" mat-menu-item>Signup
+            <mat-icon>exit_to_app</mat-icon>
+          </button>
+        </div>
+        <div>
+          <button (click)="settings()" mat-menu-item>Settings
+            <mat-icon>settings</mat-icon>
+          </button>
+        </div>
+      </mat-menu>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-container>
+</div>
+
